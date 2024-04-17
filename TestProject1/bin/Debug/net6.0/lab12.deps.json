@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "lab12/1.0.0": {
+        "dependencies": {
+          "l10": "1.0.0"
+        },
+        "runtime": {
+          "lab12.dll": {}
+        }
+      },
+      "Helpers/1.0.0": {
+        "runtime": {
+          "Helpers.dll": {}
+        }
+      },
+      "l10/1.0.0": {
+        "dependencies": {
+          "Helpers": "1.0.0"
+        },
+        "runtime": {
+          "l10.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "lab12/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "l10/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
