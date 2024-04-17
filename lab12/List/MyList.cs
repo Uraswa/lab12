@@ -6,7 +6,7 @@ namespace lab12.List;
 /// Собственная реализация связного списка
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class MyList<T> : ICloneable where T : ICloneable, IInit
+public class MyList<T> : ICloneable where T : ICloneable
 {
     /// <summary>
     /// Голова, указывающая на начало списка
