@@ -14,7 +14,7 @@ public class MyList<T> : ICloneable where T : ICloneable
     public ListNode<T>? Start { get; private set; }
     
     /// <summary>
-    /// Голово, указывающая на конец списка
+    /// Голова, указывающая на конец списка
     /// </summary>
    public ListNode<T>? End { get; private set; }
 

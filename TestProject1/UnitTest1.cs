@@ -1,4 +1,3 @@
-using System.Reflection;
 using l10;
 using lab12.List;
 
@@ -287,5 +286,14 @@ public class Tests
         Assert.IsTrue(list.Count == 0);
         Assert.IsTrue(list.End == null);
         Assert.IsTrue(list.Start == null);
+    }
+
+    [Test]
+    public void TestListNodeEmptyConstructor()
+    {
+        var node = new ListNode<Game>();
+        Assert.IsTrue(node.Data == null);
+        Assert.IsTrue(node.Next == null);
+        Assert.IsTrue(node.Prev == null);
     }
 }
