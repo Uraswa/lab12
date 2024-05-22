@@ -11,11 +11,24 @@ public class Tests
     }
 
     [Test]
-    public void TestDeleteFromEmpty()
+    public void TestDeleteNotExisting()
     {
-        var emptyList = new MyList<Game>();
-        Assert.IsFalse(emptyList.RemoveItem((g) => g.Name == "123"));
+        var list = new MyList<Game>();
+        var game = new Game();
+        game.RandomInit();
+        Assert.IsFalse(list.RemoveItem(game.Equals));
     }
+    
+    [Test]
+    public void TestDeleteOnly()
+    {
+        var list = new MyList<Game>();
+        var game = new Game();
+        game.RandomInit();
+        list.AddItemEnd(game);
+        Assert.IsTrue(list.RemoveItem((g) => g.Id.Number == game.Id.Number));
+    }
+
     
     [Test]
     public void TestDeleteNonExistingElement()
@@ -198,7 +211,13 @@ public class Tests
     public void TestFindInEmpty()
     {
         var list = new MyList<Game>();
-        Assert.IsNull(list.FindItem((g) => g.Name == "123"));
+        var game = new Game();
+        game.RandomInit();
+        Assert.IsNull(
+            list.FindItem(
+                game.Equals
+            )
+            );
     }
     
     [Test]
@@ -295,5 +314,12 @@ public class Tests
         Assert.IsTrue(node.Data == null);
         Assert.IsTrue(node.Next == null);
         Assert.IsTrue(node.Prev == null);
+    }
+
+    [Test]
+    public void TestEmptyPrint()
+    {
+        var list = new MyList<Game>();
+        list.Print();
     }
 }

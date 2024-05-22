@@ -54,6 +54,11 @@ public class Program
                     Console.ReadKey();
                     break;
                 case 4:
+                    if (list.Count == 0)
+                    {
+                        Console.WriteLine("Список пуст!");
+                        continue;
+                    }
                     DeleteLastElementWithNameWrapper(list);
                     Console.ReadKey();
                     break;
