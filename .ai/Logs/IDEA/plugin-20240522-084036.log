@@ -1,0 +1,16 @@
+2024-05-22T05:40:36.051Z [ctureModificationListener$Companion.initForProject] INFO ProjectStructureModificationListener is init for project lab12
+2024-05-22T05:40:36.056Z [s.AiToolwindowsInitializer.reinitializeToolWindows] INFO AI state ENABLED
+2024-05-22T05:40:36.090Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2024-05-22T05:40:36.139Z [nfrastructureApiService.createInfrastructureFacade] INFO isInfrastructureDebug: false
+2024-05-22T05:40:36.140Z [nfrastructureApiService.createInfrastructureFacade] INFO Use port: 9906
+2024-05-22T05:40:36.148Z [.services.HeavyInfrastructureApiService.initialize] INFO Plugin context initialized
+2024-05-22T05:40:36.148Z [itializeManager$initializeAnalyzer$1.invokeSuspend] INFO initializing infrastructure
+2024-05-22T05:40:36.164Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2024-05-22T05:40:36.425Z [intellij.services.AiInitializeManager.initializeAI] INFO IntelliJ listens web server on port: 63342
+2024-05-22T05:40:40.538Z [initializeInfrastructureInstance$1$1.invokeSuspend] INFO Infrastructure initialized
+2024-05-22T05:40:40.963Z [y.aiintellij.utils.logging.AiProjectLogger.cleanUp] INFO Clean up logs files was started
+2024-05-22T05:40:40.966Z [y.aiintellij.utils.logging.AiProjectLogger.cleanUp] INFO Clean up logs files was finished
+2024-05-22T05:40:44.271Z [tilsKt.updateDaemonCodeAnalyzerForOpenFilesFromEDT] INFO Update daemon code analyzer
+2024-05-22T05:40:44.274Z [ices.aie.AieInitializer$initialize$1.invokeSuspend] INFO AIE integration isn't initialized, skipping listeners initialization
+2024-05-22T05:40:44.422Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO reloading additional log panels
+2024-05-22T05:40:44.422Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO not in developer mode, skipping

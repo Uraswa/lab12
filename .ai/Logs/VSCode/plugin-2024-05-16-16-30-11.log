@@ -1,0 +1,17 @@
+[5/16/2024, 4:30:11 PM] info: Logging was started
+[5/16/2024, 4:30:11 PM] info: Start application inspector initialization
+[5/16/2024, 4:30:11 PM] info: Hide developer mode UI
+[5/16/2024, 4:30:11 PM] info: Infrastructure Configurations: {"port":8000,"infrastructureAssemblyFolderPath":"C:\\Users\\Admin\\AppData\\Local\\Application Inspector Analyzer","applicationResourcesFolderPath":"C:\\Users\\Admin\\AppData\\Local\\Application Inspector Analyzer","scanTargetFolderPath":"v:\\lab12\\lab12","isDebugging":false,"logLevel":{"q8_1":"Error","r8_1":5,"type":5,"key":"Settings.LogLevel.Error.Text"},"logDir":"v:\\lab12\\lab12\\.ai\\Logs\\Infrastructure\\2024-05-16-16-30-11","applicationLocalDataFolderPath":"v:\\lab12\\lab12\\.ai"}
+[5/16/2024, 4:30:11 PM] info: Start infrastructure initialization
+[5/16/2024, 4:30:11 PM] info: Infrastructure was started
+[5/16/2024, 4:30:12 PM] info: Initialize aie integration isn't initialized
+[5/16/2024, 4:30:12 PM] info: Infrastructure was initialized
+[5/16/2024, 4:30:12 PM] info: Infrastructure Installer was deleted
+[5/16/2024, 4:30:12 PM] info: Clean up logs files was started
+[5/16/2024, 4:30:12 PM] info: Clean up logs files was finished
+[5/16/2024, 4:30:16 PM] info: Start scan command handled
+[5/16/2024, 4:31:08 PM] info: cannot open file:///v%3A/lab12/lab12/TestProject1/bin/Debug/net6.0/Newtonsoft.Json.dll. Detail: File seems to be binary and cannot be opened as text
+[5/16/2024, 4:31:08 PM] info: cannot open file:///v%3A/lab12/lab12/TestProject1/bin/Debug/net6.0/NuGet.Frameworks.dll. Detail: File seems to be binary and cannot be opened as text
+[5/16/2024, 4:31:08 PM] info: cannot open file:///v%3A/lab12/lab12/TestProject1/bin/Debug/net6.0/testcentric.engine.metadata.dll. Detail: File seems to be binary and cannot be opened as text
+[5/16/2024, 4:32:26 PM] info: Scan done message handled
+[5/16/2024, 4:32:26 PM] info: Scan was finished with errors. Errors will be output to the output channel.

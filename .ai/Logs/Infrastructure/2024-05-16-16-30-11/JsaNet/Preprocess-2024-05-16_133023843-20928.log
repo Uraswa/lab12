@@ -1,0 +1,5 @@
+﻿#Thread(1) 2024-05-16 16:30:23.851: INFO: Platform: x64, framework: .NETCoreApp,Version=v6.0
+#Thread(1) 2024-05-16 16:30:23.857: INFO: Preprocess version 1.2.0.0, started with command line: "C:\Users\Admin\AppData\Local\Application Inspector Analyzer\utils\jsa.net\JSA.Net.Preprocess.dll" --connection-type Socket -p 36680 --scan-target v:\lab12\lab12 --logs-dir v:\lab12\lab12\.ai\Logs\Infrastructure\2024-05-16-16-30-11\JsaNet --temp-dir v:\lab12\lab12\.ai\Temp\55abb1313f27455aa0821aeed2b684ca\JsaNet --log-level Error
+#Thread(8) 2024-05-16 16:30:23.989: INFO: Toolset MSBuildSDKsPath = `C:\Users\Admin\AppData\Local\Application Inspector Analyzer\utils\jsa.net\MSBuild\Dotnet\sdk\100.0.0\Sdks`
+#Thread(4) 2024-05-16 16:30:28.128: INFO: Solution 'v:\lab12\lab12\fake.sln' with 4 projects loaded, failed projects: 0, skipped projects: 0.
+#Thread(4) 2024-05-16 16:30:44.988: INFO: Preprocess successfully finished!

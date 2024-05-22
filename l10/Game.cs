@@ -166,7 +166,7 @@ namespace l10
         {
             Random rnd = Helpers.Helpers.GetOrCreateRandom();
             Id = new IdNumber();
-            Name = gameNamesOptions[rnd.Next(gameNamesOptions.Length)];
+            Name = "Игра " + Id.Number;
             MinimumPlayers = (uint)rnd.Next(1, MaximumPlayersInRandomInit);
             MaximumPlayers = (uint)rnd.Next((int)MinimumPlayers, MaximumPlayersInRandomInit);
         }
@@ -185,7 +185,7 @@ namespace l10
 
         public override string ToString()
         {
-            return Name + "\n";
+            return Name;
         }
 
         public int CompareTo(object? obj) // метод сравнение объектов (IComparable)
@@ -231,6 +231,11 @@ namespace l10
         public object ShallowCopy() // метод копирования объектов (ICloneable)
         {
             return this.MemberwiseClone();
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.Number;
         }
     }
 }

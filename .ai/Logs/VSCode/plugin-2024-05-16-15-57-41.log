@@ -1,0 +1,12 @@
+[5/16/2024, 3:57:41 PM] info: Logging was started
+[5/16/2024, 3:57:41 PM] info: Start application inspector initialization
+[5/16/2024, 3:57:41 PM] info: Hide developer mode UI
+[5/16/2024, 3:57:41 PM] info: Infrastructure Configurations: {"port":8000,"infrastructureAssemblyFolderPath":"C:\\Users\\Admin\\AppData\\Local\\Application Inspector Analyzer","applicationResourcesFolderPath":"C:\\Users\\Admin\\AppData\\Local\\Application Inspector Analyzer","scanTargetFolderPath":"v:\\lab12\\lab12","isDebugging":false,"logLevel":{"q8_1":"Error","r8_1":5,"type":5,"key":"Settings.LogLevel.Error.Text"},"logDir":"v:\\lab12\\lab12\\.ai\\Logs\\Infrastructure\\2024-05-16-15-57-41","applicationLocalDataFolderPath":"v:\\lab12\\lab12\\.ai"}
+[5/16/2024, 3:57:41 PM] info: Start infrastructure initialization
+[5/16/2024, 3:57:42 PM] info: Infrastructure was started
+[5/16/2024, 3:57:45 PM] info: Initialize aie integration isn't initialized
+[5/16/2024, 3:57:45 PM] info: Infrastructure was initialized
+[5/16/2024, 3:57:45 PM] info: Infrastructure Installer was deleted
+[5/16/2024, 3:57:46 PM] info: Clean up logs files was started
+[5/16/2024, 3:57:46 PM] info: Clean up logs files was finished
+[5/16/2024, 3:57:47 PM] info: Project was created. Id: 55abb131-3f27-455a-a082-1aeed2b684ca

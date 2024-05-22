@@ -1,0 +1,58 @@
+ERROR ParsingException in "v:\lab12\lab12\lab12\Program.cs": lab12\Program.cs(5,16): error CS1514: { expected.
+ERROR ParsingException in "v:\lab12\lab12\lab12\Program.cs": lab12\Program.cs(138,2): error CS1513: } expected.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\UnitTest1.cs": TestProject1\UnitTest1.cs(4,23): error CS1514: { expected.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\UnitTest1.cs": TestProject1\UnitTest1.cs(299,2): error CS1513: } expected.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\Usings.cs": TestProject1\Usings.cs(1,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\List\ListNode.cs": lab12\List\ListNode.cs(1,21): error CS1514: { expected.
+ERROR ParsingException in "v:\lab12\lab12\lab12\List\ListNode.cs": lab12\List\ListNode.cs(27,2): error CS1513: } expected.
+ERROR ParsingException in "v:\lab12\lab12\lab12\List\MyList.cs": lab12\List\MyList.cs(3,21): error CS1514: { expected.
+ERROR ParsingException in "v:\lab12\lab12\lab12\List\MyList.cs": lab12\List\MyList.cs(242,2): error CS1513: } expected.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(2,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(3,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(4,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(5,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(6,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(7,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs": Helpers\obj\Debug\net6.0\Helpers.GlobalUsings.g.cs(8,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(2,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(3,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(4,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(5,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(6,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(7,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs": lab12\obj\Debug\net6.0\lab12.GlobalUsings.g.cs(8,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(2,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(3,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(4,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(5,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(6,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(7,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs": l10\obj\Debug\net6.0\l10.GlobalUsings.g.cs(8,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(2,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(3,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(4,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(5,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(6,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(7,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+ERROR ParsingException in "v:\lab12\lab12\TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs": TestProject1\obj\Debug\net6.0\TestProject1.GlobalUsings.g.cs(8,1): error CS0116: A namespace cannot directly contain members such as fields or methods.
+
+AI.Taint.CLangs version:       not found or not supported
+AI.Taint version:              2.2.3.0 (03/19/2024 10:57:36)
+OS:                            Microsoft Windows NT 10.0.19045.0
+Config:                        RELEASE no debugger, no obfuscation
+Peak virtual/working set:      2102046.76171875 / 116.5625 MB, 64-bit
+
+Scan path or file:             v:\lab12\lab12
+Thread count:                  4
+Finish date:                   05/16/2024 16:30:55
+Matches count:                 0 (0 PM + 0 Taint; 0 suppressed)
+Files count:                   22
+Lines/chars count:             1392 / 44066
+Patterns count:                872 (218 PM + 654 Taint)
+File time ratio:               01.46%
+ParseTree time ratio:          21.93%
+Ust time ratio:                11.45%
+Match time ratio:              10.57%
+Pattern time ratio:            54.59%
+
+Time elapsed:                  00:09.035

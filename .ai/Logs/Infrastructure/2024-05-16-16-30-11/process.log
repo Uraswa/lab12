@@ -1,0 +1,17 @@
+16:30:52.524  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:52.601  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:52.665  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:52.745  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:52.809  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:52.872  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:52.936  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:53.000  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:53.064  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:53.128  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:53.192  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:30:53.257  ERROR  @JsaNetProcessor: Error "FileNotIncludedInAnyProject"(null) was received.
+16:32:24.932  ERROR  @ConfigurationProcessor: Stopping work of ConfigurationProcessor...
+––– details ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+System.Exception: Pipe disconnected! STATE: Broken
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

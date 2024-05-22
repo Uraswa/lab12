@@ -1,0 +1,374 @@
+﻿[
+// 2024-05-16 16:30:53.690
+{
+  "Version": "3.0",
+  "Id": "3797880380",
+  "GroupId": "v:\\lab12\\lab12\\helpers\\helpers.cs:21:13:21:54",
+  "ScanMode": "FromPublicProtected",
+  "Class": "Vulnerability",
+  "Type": "Information Exposure",
+  "IsSuspected": true,
+  "IsSecondOrder": false,
+  "IsSuppressed": false,
+  "VulnerableExpression": {
+    "Value": "Console.Write(\"Введите \" + keyNum + \": \")",
+    "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+    "BeginLine": 21,
+    "BeginColumn": 13,
+    "EndLine": 21,
+    "EndColumn": 54
+  },
+  "EntryPoint": {
+    "Value": "public static uint EnterUInt(string keyNum, uint minValue = uint.MinValue, uint maxValue = uint.MaxValue)",
+    "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+    "BeginLine": 19,
+    "BeginColumn": 9,
+    "EndLine": 19,
+    "EndColumn": 114
+  },
+  "AdditionalConditions": "((\"Введите \" + keyNum) + \": \").Contains(\"Userpassword:password\")",
+  "Exploit": {
+    "Type": "HTTP",
+    "Text": "",
+    "Parameters": []
+  },
+  "TaintDataEntries": [
+    {
+      "Value": "string keyNum",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 38,
+      "EndLine": 19,
+      "EndColumn": 51
+    }
+  ],
+  "DataTrace": [
+    {
+      "Value": "string keyNum",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 38,
+      "EndLine": 19,
+      "EndColumn": 51
+    },
+    {
+      "Value": "keyNum",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 21,
+      "BeginColumn": 40,
+      "EndLine": 21,
+      "EndColumn": 46
+    },
+    {
+      "Value": "Console.Write(\"Введите \" + keyNum + \": \")",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 21,
+      "BeginColumn": 13,
+      "EndLine": 21,
+      "EndColumn": 54
+    }
+  ],
+  "BestPlaceToFix": null
+},
+// 2024-05-16 16:30:53.924
+{
+  "Version": "3.0",
+  "Id": "1496180852",
+  "GroupId": "v:\\lab12\\lab12\\helpers\\helpers.cs:31:25:32:124",
+  "ScanMode": "FromPublicProtected",
+  "Class": "Vulnerability",
+  "Type": "Information Exposure",
+  "IsSuspected": true,
+  "IsSecondOrder": false,
+  "IsSuppressed": false,
+  "VulnerableExpression": {
+    "Value": "Console.Write(\r\n                            $\"Ошибка. Число должно находится в пределах [{minValue};{maxValue}], введите {keyNum} заново:\")",
+    "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+    "BeginLine": 31,
+    "BeginColumn": 25,
+    "EndLine": 32,
+    "EndColumn": 124
+  },
+  "EntryPoint": {
+    "Value": "public static uint EnterUInt(string keyNum, uint minValue = uint.MinValue, uint maxValue = uint.MaxValue)",
+    "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+    "BeginLine": 19,
+    "BeginColumn": 9,
+    "EndLine": 19,
+    "EndColumn": 114
+  },
+  "AdditionalConditions": "(minValue == 0) && (maxValue == 0) && (result == 1) && (((\"Ошибка. Число должно находится в пределах [0;0], введите \" + keyNum) + \" заново:\").Contains(\"Userpassword:password\") && System.UInt32.TryParse(System.Console.ReadLine(), 1))",
+  "Exploit": {
+    "Type": "HTTP",
+    "Text": "",
+    "Parameters": []
+  },
+  "TaintDataEntries": [
+    {
+      "Value": "uint minValue = uint.MinValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 53,
+      "EndLine": 19,
+      "EndColumn": 82
+    },
+    {
+      "Value": "uint maxValue = uint.MaxValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 84,
+      "EndLine": 19,
+      "EndColumn": 113
+    },
+    {
+      "Value": "string keyNum",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 38,
+      "EndLine": 19,
+      "EndColumn": 51
+    }
+  ],
+  "DataTrace": [
+    {
+      "Value": "uint minValue = uint.MinValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 53,
+      "EndLine": 19,
+      "EndColumn": 82
+    },
+    {
+      "Value": "minValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 32,
+      "BeginColumn": 75,
+      "EndLine": 32,
+      "EndColumn": 83
+    },
+    {
+      "Value": "uint maxValue = uint.MaxValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 84,
+      "EndLine": 19,
+      "EndColumn": 113
+    },
+    {
+      "Value": "maxValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 32,
+      "BeginColumn": 86,
+      "EndLine": 32,
+      "EndColumn": 94
+    },
+    {
+      "Value": "string keyNum",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 38,
+      "EndLine": 19,
+      "EndColumn": 51
+    },
+    {
+      "Value": "keyNum",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 32,
+      "BeginColumn": 107,
+      "EndLine": 32,
+      "EndColumn": 113
+    },
+    {
+      "Value": "$\"Ошибка. Число должно находится в пределах [{minValue};{maxValue}], введите {keyNum} заново:\"",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 32,
+      "BeginColumn": 29,
+      "EndLine": 32,
+      "EndColumn": 123
+    },
+    {
+      "Value": "Console.Write(\r\n                            $\"Ошибка. Число должно находится в пределах [{minValue};{maxValue}], введите {keyNum} заново:\")",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 31,
+      "BeginColumn": 25,
+      "EndLine": 32,
+      "EndColumn": 124
+    }
+  ],
+  "BestPlaceToFix": null
+},
+// 2024-05-16 16:30:53.927
+{
+  "Version": "3.0",
+  "Id": "2297112056",
+  "GroupId": "v:\\lab12\\lab12\\helpers\\helpers.cs:41:21:42:142",
+  "ScanMode": "FromPublicProtected",
+  "Class": "Vulnerability",
+  "Type": "Information Exposure",
+  "IsSuspected": true,
+  "IsSecondOrder": false,
+  "IsSuppressed": false,
+  "VulnerableExpression": {
+    "Value": "Console.Write(\r\n                        $\"Ошибка. Введеные некорректные данные. Пожалуйста, введите целочисленное число в пределах [{minValue};{maxValue}]:\")",
+    "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+    "BeginLine": 41,
+    "BeginColumn": 21,
+    "EndLine": 42,
+    "EndColumn": 142
+  },
+  "EntryPoint": {
+    "Value": "public static uint EnterUInt(string keyNum, uint minValue = uint.MinValue, uint maxValue = uint.MaxValue)",
+    "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+    "BeginLine": 19,
+    "BeginColumn": 9,
+    "EndLine": 19,
+    "EndColumn": 114
+  },
+  "AdditionalConditions": "(maxValue == 0) && ((!(System.UInt32.TryParse(System.Console.ReadLine(), result))) && ((\"Ошибка. Введеные некорректные данные. Пожалуйста, введите целочисленное число в пределах [\" + minValue.ToString()) + \";0]:\").Contains(\"Userpassword:password\"))",
+  "Exploit": {
+    "Type": "HTTP",
+    "Text": "",
+    "Parameters": []
+  },
+  "TaintDataEntries": [
+    {
+      "Value": "uint minValue = uint.MinValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 53,
+      "EndLine": 19,
+      "EndColumn": 82
+    },
+    {
+      "Value": "uint maxValue = uint.MaxValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 84,
+      "EndLine": 19,
+      "EndColumn": 113
+    }
+  ],
+  "DataTrace": [
+    {
+      "Value": "uint minValue = uint.MinValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 53,
+      "EndLine": 19,
+      "EndColumn": 82
+    },
+    {
+      "Value": "minValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 42,
+      "BeginColumn": 118,
+      "EndLine": 42,
+      "EndColumn": 126
+    },
+    {
+      "Value": "uint maxValue = uint.MaxValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 19,
+      "BeginColumn": 84,
+      "EndLine": 19,
+      "EndColumn": 113
+    },
+    {
+      "Value": "maxValue",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 42,
+      "BeginColumn": 129,
+      "EndLine": 42,
+      "EndColumn": 137
+    },
+    {
+      "Value": "$\"Ошибка. Введеные некорректные данные. Пожалуйста, введите целочисленное число в пределах [{minValue};{maxValue}]:\"",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 42,
+      "BeginColumn": 25,
+      "EndLine": 42,
+      "EndColumn": 141
+    },
+    {
+      "Value": "Console.Write(\r\n                        $\"Ошибка. Введеные некорректные данные. Пожалуйста, введите целочисленное число в пределах [{minValue};{maxValue}]:\")",
+      "File": "v:\\lab12\\lab12\\Helpers\\Helpers.cs",
+      "BeginLine": 41,
+      "BeginColumn": 21,
+      "EndLine": 42,
+      "EndColumn": 142
+    }
+  ],
+  "BestPlaceToFix": null
+},
+// 2024-05-16 16:30:58.144
+{
+  "Version": "3.0",
+  "Id": "588031452",
+  "GroupId": "v:\\lab12\\lab12\\lab12\\list\\mylist.cs:209:13:209:46",
+  "ScanMode": "FromPublicProtected",
+  "Class": "Vulnerability",
+  "Type": "Information Exposure",
+  "IsSuspected": true,
+  "IsSecondOrder": false,
+  "IsSuppressed": false,
+  "VulnerableExpression": {
+    "Value": "Console.Write(current.ToString())",
+    "File": "v:\\lab12\\lab12\\lab12\\List\\MyList.cs",
+    "BeginLine": 209,
+    "BeginColumn": 13,
+    "EndLine": 209,
+    "EndColumn": 46
+  },
+  "EntryPoint": {
+    "Value": "public static void DeleteLastElementWithNameWrapper(MyList<Game> gamesList)",
+    "File": "v:\\lab12\\lab12\\lab12\\Program.cs",
+    "BeginLine": 83,
+    "BeginColumn": 5,
+    "EndLine": 83,
+    "EndColumn": 80
+  },
+  "AdditionalConditions": "(%sealed%[110576] == \"Userpassword:password\") && (gamesList.End.Prev == null) && (gamesList.End.Data._name == null) && %sealed%[102844] && ((%sealed%[107957] != null) && (gamesList.End != null) && (gamesList.End.Data != null) && (gamesList.Start != gamesList.End) && (gamesList.Start != null) && (gamesList.Start.Next != null) && (null == System.Console.ReadLine()))",
+  "Exploit": {
+    "Type": "HTTP",
+    "Text": "GET /Program.cs?gamesList=0 HTTP/1.1\r\nHost: localhost\r\n\r\n",
+    "Parameters": [
+      {
+        "Name": "gamesList",
+        "Vulnerable": false,
+        "Value": "0",
+        "Payload": null,
+        "Source": "REQUEST_ARGS",
+        "Dependency": null
+      }
+    ]
+  },
+  "TaintDataEntries": [
+    {
+      "Value": "current.ToString()",
+      "File": "v:\\lab12\\lab12\\lab12\\List\\MyList.cs",
+      "BeginLine": 209,
+      "BeginColumn": 27,
+      "EndLine": 209,
+      "EndColumn": 45
+    }
+  ],
+  "DataTrace": [
+    {
+      "Value": "current.ToString()",
+      "File": "v:\\lab12\\lab12\\lab12\\List\\MyList.cs",
+      "BeginLine": 209,
+      "BeginColumn": 27,
+      "EndLine": 209,
+      "EndColumn": 45
+    },
+    {
+      "Value": "Console.Write(current.ToString())",
+      "File": "v:\\lab12\\lab12\\lab12\\List\\MyList.cs",
+      "BeginLine": 209,
+      "BeginColumn": 13,
+      "EndLine": 209,
+      "EndColumn": 46
+    }
+  ],
+  "BestPlaceToFix": null
+}]
