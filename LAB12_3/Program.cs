@@ -230,7 +230,7 @@ public class Program
         foreach (var game in ISDTree.FindElements(g => g != null && g.Name == name))
         {
             Console.WriteLine("----Элемент #" + (foundElements + 1) + "----");
-            game.Show();
+            game.ShowVirtual();
             foundElements++;
         }
 
@@ -274,7 +274,7 @@ public class Program
         AVLTree = new AvlTree<Game>();
         foreach (var game in ISDTree.FindElements(e => true))
         {
-            AVLTree.Insert(game);
+            AVLTree.Insert((Game)game.Clone());
         }
         Console.WriteLine("ISD дерево успешно преобразовано в AVL!");
     }
@@ -295,7 +295,7 @@ public class Program
         {
             if (game == null || game.Name != name) continue;
             Console.WriteLine("----Элемент #" + (foundElements + 1) + "----");
-            game.Show();
+            game.ShowVirtual();
             foundElements++;
         }
 
