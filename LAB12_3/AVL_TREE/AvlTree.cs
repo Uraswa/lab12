@@ -31,7 +31,7 @@ public class AvlTree<T> where T : IComparable
      */
     int BalanceFactor(AvlTreeNode<T> node)
     {
-        if (node == null) return 0;
+        //if (node == null) return 0;
         return GetHeight(node.Left) - GetHeight(node.Right);
     }
 
@@ -65,7 +65,7 @@ public class AvlTree<T> where T : IComparable
 
     /**
  * <summary>Левое вращение в алгоритме AVL</summary>
- * @param y - узел
+ * @param x - узел
  * @return возвращает узел, который нужно поставить на место текущего узла
  */
     AvlTreeNode<T> LeftRotation(AvlTreeNode<T> x)
@@ -140,7 +140,11 @@ public class AvlTree<T> where T : IComparable
      */
     AvlTreeNode<T> AddNode(AvlTreeNode<T> node, T val)
     {
-        if (node == null) return new AvlTreeNode<T>(val, null, null, 1);
+        if (node == null)
+        {
+            Count++;
+            return new AvlTreeNode<T>(val, null, null, 1);
+        }
 
         int comparisonResult = val.CompareTo(node.Value);
 
@@ -157,11 +161,11 @@ public class AvlTree<T> where T : IComparable
 
 
         //непосредственно сами вращения
-        // Left Left
+        // Right right
         if (balance > 1 && val.CompareTo(node.Left.Value) < 0)
             return RightRotation(node);
 
-        // Right Right
+        // Left left
         if (balance < -1 && val.CompareTo(node.Right.Value) > 0)
             return LeftRotation(node);
 
@@ -236,19 +240,17 @@ public class AvlTree<T> where T : IComparable
             //если у искомого узла один потомок, то нужно текущий узел заменить этим потомком
             if (node.Left == null || node.Right == null)
             {
-                AvlTreeNode<T> temp = null;
-                if (temp == null)
-                    temp = node.Right;
-                else
-                    temp = node.Left;
-
-                if (temp == null)
+                if (node.Left == null && node.Right != null)
                 {
-                    temp = node;
-                    node = null;
+                    node = node.Right;
+                } else if (node.Left != null && node.Right == null)
+                {
+                    node = node.Left;
                 }
                 else
-                    node = temp;
+                {
+                    node = null;
+                }
             }
             else
             {
@@ -268,7 +270,7 @@ public class AvlTree<T> where T : IComparable
         int balance = BalanceFactor(node);
 
         //балансировка бинарного дерева
-        // Left Left вращение
+        // right rotation
         if (balance > 1 && BalanceFactor(node.Left) >= 0)
             return RightRotation(node);
 
@@ -279,7 +281,7 @@ public class AvlTree<T> where T : IComparable
             return RightRotation(node);
         }
 
-        // Right Right вращение
+        // Left rotation
         if (balance < -1 && BalanceFactor(node.Right) <= 0)
             return LeftRotation(node);
 
@@ -315,7 +317,6 @@ public class AvlTree<T> where T : IComparable
      */
     public void Insert(T val)
     {
-        Count++;
         _root = AddNode(_root, val);
     }
 
@@ -359,7 +360,7 @@ public class AvlTree<T> where T : IComparable
      * <summary>Найти по значению</summary>
      * @param value -  значение
      */
-    T FindByValue(T value)
+    public T FindByValue(T value)
     {
         return FindByValue(_root, value);
     }
