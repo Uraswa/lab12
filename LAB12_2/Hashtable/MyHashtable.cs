@@ -16,18 +16,24 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
     private class Chain
     {
         /// <summary>
-        /// Ключ и хранимое значение, типы данных такие же как в родительском классе.
+        /// Ключ
         /// </summary>
-        public KeyValuePair<TKey, TValue> KeyValue;
+        public TKey Key;
+        
+        /// <summary>
+        /// Значение
+        /// </summary>
+        public TValue Value;
 
         /// <summary>
         ///  Ссылка на следующий элемент в цепочке
         /// </summary>
         public Chain? Next;
 
-        public Chain(KeyValuePair<TKey, TValue> keyValue)
+        public Chain(TKey key, TValue value)
         {
-            KeyValue = keyValue;
+            Key = key;
+            Value = value;
             Next = null;
         }
     }
@@ -86,7 +92,7 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
         if (_chains[chainIndex] == null)
         {
             //инициализация цепочки сразу с первым элементом, поэтому увеличиваем Count.
-            _chains[chainIndex] = new Chain(new KeyValuePair<TKey, TValue>(key, value));
+            _chains[chainIndex] = new Chain(key, value);
             Count++;
         }
         //цепочка уже существует
@@ -98,11 +104,11 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
 
             while (true)
             {
-                if (current.KeyValue.Key.Equals(key))
+                if (current.Key.Equals(key))
                 {
                     //элемент с таким ключом уже есть в цепочке, нужно заменить значение.
-                    var newKeyValue = new KeyValuePair<TKey, TValue>(key, value);
-                    current.KeyValue = newKeyValue;
+                    current.Key = key;
+                    current.Value = value;
                     return;
                 }
                 if (current.Next == null) break;
@@ -110,7 +116,7 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
             }
 
             //если не нашли, добавляем в конец цепочки и увеличиваем счетчик
-            var newHashChain = new Chain(new KeyValuePair<TKey, TValue>(key, value));
+            var newHashChain = new Chain(key, value);
             current.Next = newHashChain;
             Count++;
         }
@@ -133,10 +139,10 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
             while (current != null)
             {
                 //сравнимаем ключи
-                if (current.KeyValue.Key.Equals(key))
+                if (current.Key.Equals(key))
                 {
                     // нашли элемент, возвращаем
-                    value = current.KeyValue.Value;
+                    value = current.Value;
                     return true;
                 }
 
@@ -183,7 +189,7 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
             while (current != null)
             {
                 //сравниваем ключи
-                if (current.KeyValue.Key.Equals(key))
+                if (current.Key.Equals(key))
                 {
                     //значит первый элемент, нужно сделать первым следующий элемент
                     if (prev == null)
@@ -232,7 +238,7 @@ public class MyHashTable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
                     // код в данном методе продолжит выполнятся со строчки, следующей за yield return.
                     // yield return может быть хоть сколько
                     // чтобы завершить выполнение, можно вызвать yield return break
-                    yield return current.KeyValue;
+                    yield return new KeyValuePair<TKey, TValue>(current.Key, current.Value);
                     current = current.Next; // следующий элемент
                 }
             }

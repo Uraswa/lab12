@@ -1,13 +1,15 @@
-﻿using l10;
+﻿using System.Diagnostics.CodeAnalysis;
+using l10;
 using LAB12_2.Hashtable;
 
 namespace LAB12_2;
 
+[ExcludeFromCodeCoverage]
 class Program
 {
     public static void Main()
     {
-        var table = new MyHashTable<int, Game>();
+        var table = new MyHashTable<string, Game>();
         while (true)
         {
             PrintMenu();
@@ -21,7 +23,7 @@ class Program
                     //Создать новую хеш таблицу с новым размером
                     //newSize - capacity новой таблицы
                     var newSize = Helpers.Helpers.EnterUInt("размер хеш таблицы", 2, 65536);
-                    table = new MyHashTable<int, Game>((int) newSize);
+                    table = new MyHashTable<string, Game>((int) newSize);
                     Console.WriteLine("Таблица с размером " + newSize + " успешно создана");
                     break;
                 case 2:
@@ -35,7 +37,7 @@ class Program
                     {
                         var game = new Game();
                         game.RandomInit();
-                        table.Set(game.Id.Number, game);
+                        table.Set(game.Name, game);
                     }
 
                     Console.WriteLine("Успешно добавлены " + randomElementsCount + " случайных элементов");
@@ -48,7 +50,10 @@ class Program
                         Console.WriteLine($"-----{i + 1}-ый элемент-----");
                         var game = new Game();
                         game.Init(); //пользовательский ввод полей объекта
-                        int key = (int) Helpers.Helpers.EnterUInt("ключ элемента", 0, int.MaxValue);
+                        
+                        Console.WriteLine("Введите ключ элемента:");
+                        string key = Console.ReadLine();
+                        if (key == null) key = "";
                         //провека, может элемент с таким ключом уже есть в таблице
                         if (table.TryGetValue(key, out var alreadyPresentValue))
                         {
@@ -70,10 +75,11 @@ class Program
                     }
                     else
                     {
-                        int keyToDelete = (int) Helpers.Helpers.EnterUInt("ключ элемента, который Вы хотите удалить", 0,
-                            int.MaxValue);
+                        Console.WriteLine("Введите ключ элемента, который Вы хотите удалить:");
+                        string key = Console.ReadLine();
+                        if (key == null) key = "";
 
-                        if (table.Remove(keyToDelete))
+                        if (table.Remove(key))
                         {
                             Console.WriteLine("Элемент успешно удален!");
                         }
@@ -82,7 +88,6 @@ class Program
                             Console.WriteLine("Элемент не найден!");
                         }
                     }
-
 
                     break;
                 case 6:
@@ -94,10 +99,11 @@ class Program
                     }
                     else
                     {
-                        int keyToGet = (int) Helpers.Helpers.EnterUInt("ключ элемента, который Вы хотите получить", 0,
-                            int.MaxValue);
+                        Console.WriteLine("Введите ключ элемента, который Вы хотите получить:");
+                        string key = Console.ReadLine();
+                        if (key == null) key = "";
 
-                        if (table.TryGetValue(keyToGet, out var gotValue))
+                        if (table.TryGetValue(key, out var gotValue))
                         {
                             gotValue.ShowVirtual();
                         }
