@@ -274,7 +274,7 @@ public class Program
         AVLTree = new AvlTree<Game>();
         foreach (var game in ISDTree.FindElements(e => true))
         {
-            AVLTree.Insert((Game)game.Clone());
+            AVLTree.Insert(game);
         }
         Console.WriteLine("ISD дерево успешно преобразовано в AVL!");
     }

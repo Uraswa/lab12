@@ -136,7 +136,27 @@ namespace Laba10
 
         }
 
-        public new object Clone() // метод клонирования объектов (ICloneable)
+        public override int CompareTo(object? obj)
+        {
+            var resultCompare = base.CompareTo(obj);
+            if (resultCompare != 0) return resultCompare;
+
+            if (obj is not VideoGame videoGame) return -1;
+
+            if (videoGame.LevelCount != LevelCount)
+            {
+                return LevelCount.CompareTo(videoGame.LevelCount);
+            }
+
+            if (Device != videoGame.Device)
+            {
+                return Device.CompareTo(videoGame.Device);
+            }
+
+            return 0;
+        }
+
+        public override object Clone() // метод клонирования объектов (ICloneable)
         {
             return new VideoGame(Name, MinimumPlayers, MaximumPlayers, new IdNumber(Id.Number), Device, LevelCount);
         }

@@ -6,10 +6,10 @@ namespace LAB12_3.AVL_TREE;
 // тип бинарного дерева
 // использует шаблон типа T, который должен имплементировать интерфейс IComparable, так как для
 //бинарного дерева важно сравнение объекта типа > или <, а не только ==
-public class AvlTree<T> where T : IComparable
+public class AvlTree<T> where T : IComparable, ICloneable
 {
-    public int Count { get; private set; }
-    AvlTreeNode<T> _root; //корень бинарного дерева
+    public int Count { get; protected set; }
+    protected AvlTreeNode<T> _root; //корень бинарного дерева
 
     /**
      * <summary>Getter высоты узла</summary>
@@ -317,7 +317,7 @@ public class AvlTree<T> where T : IComparable
      */
     public void Insert(T val)
     {
-        _root = AddNode(_root, val);
+        _root = AddNode(_root, (T)val.Clone());
     }
 
     /**

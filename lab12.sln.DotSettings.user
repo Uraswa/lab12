@@ -1,10 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\Admin\AppData\Local\JetBrains\Rider2023.2\resharper-host\temp\Rider\vAny\CoverageData\_lab12.80550420.01\Snapshot\snapshot.utdcvr</s:String>
+	
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=afe6454c_002D2726_002D467d_002Db085_002Dfd61cf2116bd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;TestProject1&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;Project Location="V:\lab12\lab12\TestProject1" Presentation="&amp;lt;TestProject1&amp;gt;" /&gt;&#xD;
     &lt;ProjectFile&gt;E1155E13-7AD4-4C0D-915E-CF61180BC735/f:UnitTest1.cs&lt;/ProjectFile&gt;&#xD;
     &lt;Project Location="V:\lab12\lab12\LAB12_3TESTS" Presentation="&amp;lt;LAB12_3TESTS&amp;gt;" /&gt;&#xD;
+    &lt;ProjectFile&gt;57C787CB-795A-48C3-8D3F-296863FF011A/f:UnitTest1.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

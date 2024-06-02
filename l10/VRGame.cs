@@ -76,6 +76,31 @@ namespace l10
                 && IsVRControllerRequired == vR.IsVRControllerRequired
                 && AreVRGlassesRequired == vR.AreVRGlassesRequired;
         }
+        
+        public override int CompareTo(object? obj)
+        {
+            var resultCompare = base.CompareTo(obj);
+            if (resultCompare != 0) return resultCompare;
 
+            if (obj is not VRGame vrGame) return -1;
+
+            if (AreVRGlassesRequired != vrGame.AreVRGlassesRequired)
+            {
+                return AreVRGlassesRequired.CompareTo(vrGame.AreVRGlassesRequired);
+            }
+
+            if (IsVRControllerRequired != vrGame.IsVRControllerRequired)
+            {
+                return IsVRControllerRequired.CompareTo(vrGame.IsVRControllerRequired);
+            }
+
+            return 0;
+        }
+
+        public override object Clone()
+        {
+            return new VRGame(Name, MinimumPlayers, MaximumPlayers, new IdNumber(Id.Number), Device, LevelCount, AreVRGlassesRequired, IsVRControllerRequired);
+
+        }
     }
 }

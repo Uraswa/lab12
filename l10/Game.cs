@@ -175,7 +175,7 @@ namespace l10
         {
             if (obj == null) return false;
             if (obj is not Game) return false;
-
+            
             Game game2compare = (Game)obj;
             return game2compare.Name == Name
                 && game2compare.Id.Number == Id.Number
@@ -188,7 +188,7 @@ namespace l10
             return Name;
         }
 
-        public int CompareTo(object? obj) // метод сравнение объектов (IComparable)
+        public virtual int CompareTo(object? obj) // метод сравнение объектов (IComparable)
         {
             if (obj == null) return -1;
             if (obj is not Game) return -1;
@@ -223,7 +223,7 @@ namespace l10
             return 0;
         }
 
-        public object Clone() // метод клонирования объектов (ICloneable)
+        public virtual object Clone() // метод клонирования объектов (ICloneable)
         {
             return new Game(Name, MinimumPlayers, MaximumPlayers, new IdNumber(Id.Number));
         }
