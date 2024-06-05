@@ -126,9 +126,9 @@ namespace Laba10
             LevelCount = (uint)rnd.Next(1, int.MaxValue);
         }
 
-        public override bool Equals(object? obj)
+        protected override bool EqualsVirtual(object? obj)
         {
-            bool parentEqual = base.Equals(obj);
+            bool parentEqual = base.EqualsVirtual(obj);
             return parentEqual
                 && (obj is VideoGame videoGame)
                 && LevelCount == videoGame.LevelCount

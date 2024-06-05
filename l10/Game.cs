@@ -156,7 +156,18 @@ namespace l10
             Id = new IdNumber(idNumber);
 
             Console.WriteLine("Введите название игры");
-            Name = Console.ReadLine() ?? String.Empty;
+            while (true)
+            {
+                Name = Console.ReadLine() ?? String.Empty;
+                if (Name.Length == 0)
+                {
+                    Console.WriteLine("Название игры не может быть пустым. Введите его заново:");
+                }
+                else
+                {
+                    break;
+                }
+            }
 
             MinimumPlayers = Helpers.Helpers.EnterUInt("Введите минимальное количество игроков", 1);
             MaximumPlayers = Helpers.Helpers.EnterUInt("Введите максимальное количество игроков", MinimumPlayers);
@@ -173,14 +184,19 @@ namespace l10
 
         public override bool Equals(object? obj)
         {
+            return EqualsVirtual(obj) && (obj as Game).EqualsVirtual(this);
+        }
+
+        protected virtual bool EqualsVirtual(object? obj)
+        {
             if (obj == null) return false;
             if (obj is not Game) return false;
             
             Game game2compare = (Game)obj;
             return game2compare.Name == Name
-                && game2compare.Id.Number == Id.Number
-                && game2compare.MinimumPlayers == MinimumPlayers
-                && game2compare.MaximumPlayers == MaximumPlayers;
+                   && game2compare.Id.Number == Id.Number
+                   && game2compare.MinimumPlayers == MinimumPlayers
+                   && game2compare.MaximumPlayers == MaximumPlayers;
         }
 
         public override string ToString()
@@ -220,7 +236,7 @@ namespace l10
                 return Id.Number.CompareTo(g.Id.Number);
             }
 
-            return 0;
+            return Equals(obj) ? 0 : -1;
         }
 
         public virtual object Clone() // метод клонирования объектов (ICloneable)

@@ -1,10 +1,12 @@
-﻿using l10;
+﻿using System.Diagnostics.CodeAnalysis;
+using l10;
 using LAB12_4.AvlTreeNET;
 using Laba10;
 
 namespace LAB12_4;
 
 
+[ExcludeFromCodeCoverage]
 public static class Program
 {
     public static void Main()

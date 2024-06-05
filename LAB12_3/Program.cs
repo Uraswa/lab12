@@ -56,7 +56,7 @@ public class Program
                     ISDTree.PrintTree();
                     break;
                 case 4:
-                    ISDFindElementsWithName();
+                    ISDFindElementsWithKey();
                     break;
                 case 5:
                     if (ISDTree.Count != 0) ISDTree.Clear();
@@ -94,7 +94,7 @@ public class Program
                     AVLTree.PrintTree();
                     break;
                 case 5:
-                    AVLFindElementsWithName();
+                    AVLFindElementWithKey();
                     break;
                 case 6:
                     AVLRemoveByValue();
@@ -118,7 +118,7 @@ public class Program
         Console.WriteLine("1. Создать ИДС со случайными значениями");
         Console.WriteLine("2. Создать ИДС с пользовательскими значениями");
         Console.WriteLine("3. Вывести ИДС");
-        Console.WriteLine("4. Найти элементы по названию в ИДС");
+        Console.WriteLine("4. Найти элементы по ключу в ИДС");
         Console.WriteLine("5. Очистить ИДС");
         Console.WriteLine("6. Назад");
     }
@@ -137,7 +137,7 @@ public class Program
         Console.WriteLine("2. Создать AVL дерево с пользовательскими значениями");
         Console.WriteLine("3. Преобразовать ISD дерево в AVL");
         Console.WriteLine("4. Вывести AVL дерево");
-        Console.WriteLine("5. Найти элементы по названию в AVL");
+        Console.WriteLine("5. Найти элементы по ключу в AVL");
         Console.WriteLine("6. Удалить элемент из AVL дерева");
         Console.WriteLine("7. Удалить AVL дерево");
         Console.WriteLine("8. Назад");
@@ -215,7 +215,7 @@ public class Program
         Console.WriteLine("Дерево успешно создано!");
     }
 
-    private static void ISDFindElementsWithName()
+    private static void ISDFindElementsWithKey()
     {
         if (ISDTree.Count == 0)
         {
@@ -223,20 +223,23 @@ public class Program
             return;
         }
 
-        Console.WriteLine("Введите имя элемента(ов) для поиска");
-        var name = Console.ReadLine();
+        var gameToSearch = GetUserGame();
 
         int foundElements = 0;
-        foreach (var game in ISDTree.FindElements(g => g != null && g.Name == name))
+        foreach (var res in ISDTree.FindElements(gameToSearch))
         {
             Console.WriteLine("----Элемент #" + (foundElements + 1) + "----");
-            game.ShowVirtual();
+            res.ShowVirtual();
             foundElements++;
         }
 
         if (foundElements == 0)
         {
-            Console.WriteLine("Элементов с названием = " + name + " не найдено!");
+            Console.WriteLine("Элементы не найдены");
+        }
+        else
+        {
+            Console.WriteLine("Всего найдено " + foundElements + " элементов!");
         }
     }
 
@@ -272,14 +275,14 @@ public class Program
             return;
         }
         AVLTree = new AvlTree<Game>();
-        foreach (var game in ISDTree.FindElements(e => true))
+        foreach (var game in ISDTree.GetAll())
         {
             AVLTree.Insert(game);
         }
         Console.WriteLine("ISD дерево успешно преобразовано в AVL!");
     }
     
-    private static void AVLFindElementsWithName()
+    private static void AVLFindElementWithKey()
     {
         if (AVLTree.Count == 0)
         {
@@ -287,23 +290,18 @@ public class Program
             return;
         }
 
-        Console.WriteLine("Введите имя элемента(ов) для поиска");
-        var name = Console.ReadLine();
+        var game2Search = GetUserGame();
+        var foundGame = AVLTree.FindByValue(game2Search);
 
-        int foundElements = 0;
-        foreach (var game in AVLTree.GetValues())
+        if (foundGame == null)
         {
-            if (game == null || game.Name != name) continue;
-            Console.WriteLine("----Элемент #" + (foundElements + 1) + "----");
-            game.ShowVirtual();
-            foundElements++;
+            Console.WriteLine("Элемент не найден!");
         }
-
-        if (foundElements == 0)
+        else
         {
-            Console.WriteLine("Элементов с названием = " + name + " не найдено!");
+            Console.WriteLine("Элемент найден");
+            foundGame.ShowVirtual();
         }
-        
     }
     
     private static void AVLRemoveByValue()
@@ -314,22 +312,7 @@ public class Program
             return;
         }
 
-        Game game2Remove = null;
-        uint gameId = Helpers.Helpers.EnterUInt("id игры");
-        foreach (var value in AVLTree.GetValues())
-        {
-            if (value.Id.Number == gameId)
-            {
-                game2Remove = value;
-                break;
-            }
-        }
-
-        if (game2Remove == null)
-        {
-            Console.WriteLine("Элемент не был найден!");
-            return;
-        }
+        Game game2Remove = GetUserGame();
 
         if (AVLTree.Remove(game2Remove))
         {

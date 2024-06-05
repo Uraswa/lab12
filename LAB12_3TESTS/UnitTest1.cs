@@ -1,6 +1,7 @@
 using l10;
 using LAB12_3.AVL_TREE;
 using LAB12_3.ISD;
+using Laba10;
 
 namespace LAB12_3TESTS;
 
@@ -32,7 +33,7 @@ public class Tests
         Assert.IsTrue(tree.Count == 1);
 
         int i = 0;
-        foreach (var g in tree.FindElements((e) => true))
+        foreach (var g in tree.GetAll())
         {
             Assert.That(g, Is.EqualTo(games[i]));
             i++;
@@ -51,7 +52,7 @@ public class Tests
         var tree = new IsdTree<Game>(games);
         Assert.IsTrue(tree.Count == 2);
 
-        var output = tree.FindElements((e) => true).ToArray();
+        var output = tree.GetAll().ToArray();
         Assert.IsTrue(output[0].Equals(games[1]));
         Assert.IsTrue(output[1].Equals(games[0]));
         
@@ -70,7 +71,7 @@ public class Tests
         var tree = new IsdTree<Game>(games);
         Assert.IsTrue(tree.Count == 3);
 
-        var output = tree.FindElements((e) => true).ToArray();
+        var output = tree.GetAll().ToArray();
         Assert.IsTrue(output[0].Equals(games[1]));
         Assert.IsTrue(output[1].Equals(games[0]));
         Assert.IsTrue(output[2].Equals(games[2]));
@@ -88,7 +89,7 @@ public class Tests
         var tree = new IsdTree<Game>(games);
         Assert.IsTrue(tree.Count == 1);
 
-        var output = tree.FindElements((e) => true).ToArray();
+        var output = tree.GetAll().ToArray();
         Assert.IsTrue(output[0] == null);
     }
     
@@ -97,6 +98,17 @@ public class Tests
     {
         var tree = new IsdTree<Game>(null);
         tree.PrintTree();
+    }
+
+    [Test]
+    public void GetAllEmpty()
+    {
+        var tree = new IsdTree<Game>(null);
+        foreach (var game in tree.GetAll())
+        {
+            Assert.IsTrue(false);
+        }
+        
     }
     
     [Test]
@@ -128,8 +140,99 @@ public class Tests
     {
         var tree = new IsdTree<Game>(null);
 
-        var output = tree.FindElements(e => true).ToArray();
+        var game = new Game("test", 1, 1, new Game.IdNumber());
+        
+        var output = tree.FindElements(game).ToArray();
         Assert.IsTrue(output.Length == 0);
+    }
+
+    [Test]
+    public void TestFindNotEmptyNotExisting()
+    {
+        var tree = new IsdTree<Game>(new Game[]
+        {
+            new Game("t0", 1, 1, new Game.IdNumber()),
+            new Game("t1", 1, 1, new Game.IdNumber()),
+            new Game("t2", 1, 1, new Game.IdNumber()),
+            new Game("t3", 1, 1, new Game.IdNumber()),
+        });
+
+        var game = new Game("t4", 1, 1, new Game.IdNumber());
+        
+        var output = tree.FindElements(game).ToArray();
+        Assert.IsTrue(output.Length == 0);
+    }
+
+    [Test]
+    public void TestFindOneExisting()
+    {
+        var tree = new IsdTree<Game>(new Game[]
+        {
+            new Game("t0", 1, 1, new Game.IdNumber(1)),
+            new Game("t1", 1, 1, new Game.IdNumber(2)),
+            new Game("t2", 1, 1, new Game.IdNumber(3)),
+            new Game("t3", 1, 1, new Game.IdNumber(4)),
+        });
+
+        var game = new Game("t3", 1, 1, new Game.IdNumber(4));
+        
+        var output = tree.FindElements(game).ToArray();
+        Assert.IsTrue(output.Length == 1);
+        Assert.IsTrue(output[0].Equals(game));
+    }
+    
+    [Test]
+    public void TestFindOneExistingLeftBranch()
+    {
+        var tree = new IsdTree<Game>(new Game[]
+        {
+            new Game("t0", 1, 1, new Game.IdNumber(1)),
+            new Game("t1", 1, 1, new Game.IdNumber(2)),
+            new Game("t2", 1, 1, new Game.IdNumber(3)),
+            new Game("t3", 1, 1, new Game.IdNumber(4)),
+        });
+
+        var game = new Game("t0", 1, 1, new Game.IdNumber(1));
+        
+        var output = tree.FindElements(game).ToArray();
+        Assert.IsTrue(output.Length == 1);
+        Assert.IsTrue(output[0].Equals(game));
+    }
+    
+    [Test]
+    public void TestFindOneExistingOtherType()
+    {
+        var tree = new IsdTree<Game>(new Game[]
+        {
+            new Game("t0", 1, 1, new Game.IdNumber(1)),
+            new Game("t1", 1, 1, new Game.IdNumber(2)),
+            new Game("t2", 1, 1, new Game.IdNumber(3)),
+            new Game("t3", 1, 1, new Game.IdNumber(4)),
+        });
+
+        var game = new VRGame("t3", 1, 1, new Game.IdNumber(4), Device.Console, 1, true, true);
+        
+        var output = tree.FindElements(game).ToArray();
+        Assert.IsTrue(output.Length == 0);
+    }
+    
+    [Test]
+    public void TestFindMultipleExisting()
+    {
+        var tree = new IsdTree<Game>(new Game[]
+        {
+            new Game("t0", 1, 1, new Game.IdNumber(1)),
+            new Game("t1", 1, 1, new Game.IdNumber(2)),
+            new Game("t3", 1, 1, new Game.IdNumber(3)),
+            new Game("t3", 1, 1, new Game.IdNumber(3)),
+        });
+
+        var game = new Game("t3", 1, 1, new Game.IdNumber(3));
+        
+        var output = tree.FindElements(game).ToArray();
+        Assert.IsTrue(output.Length == 2);
+        Assert.IsTrue(output[0].Equals(game));
+        Assert.IsTrue(output[1].Equals(game));
     }
 
     [Test]
@@ -149,7 +252,7 @@ public class Tests
         };
 
         var tree = new IsdTree<Game>(games);
-        var output = tree.FindElements(g => true).ToArray();
+        var output = tree.GetAll().ToArray();
         
         Assert.IsFalse(ReferenceEquals(games[0], output[0]));
         Assert.IsFalse(ReferenceEquals(games[0].Id, output[0].Id));

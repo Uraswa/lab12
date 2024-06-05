@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using l10;
 
 namespace LAB12_3.ISD;
 
@@ -64,7 +65,9 @@ public class IsdTree<T> where T : class, ICloneable
             {
                 Console.Write(" "); //Выводим нужное количество пробелов, чтобы дерево вывелось в нужном порядке
             }
-            Console.WriteLine(node.Value == null ? "" : node.Value.ToString()); //Вывод саму информацию в точке
+
+            string nodeName = node.Value == null ? "" : node.Value.ToString();
+            Console.WriteLine(nodeName.Length == 0 ? "Пустой элемент" : nodeName); //Вывод саму информацию в точке
             PrintTree(node.Left, spaces + 5); //Запускаем печать левой ветки
         }
     }
@@ -105,27 +108,36 @@ public class IsdTree<T> where T : class, ICloneable
     }
 
     /// <summary>
+    /// Получить все элементы дерева
+    /// </summary>
+    /// <returns>Все элементы дерева</returns>
+    public IEnumerable<T> GetAll()
+    {
+        return GetAll(_root);
+    }
+
+    /// <summary>
     /// Обертка над методом поиска элементов по предикату
     /// </summary>
-    /// <param name="predicate">Предикат, если true, значит элемент подходит</param>
+    /// <param name="item">Объект для поиска</param>
     /// <returns>Найденные элементы</returns>
-    public IEnumerable<T> FindElements(Predicate<T> predicate)
+    public IEnumerable<T> FindElements(T item)
     {
-        return FindElements(_root, predicate);
+        return FindElements(_root, item);
     }
-    
+
     /// <summary>
     /// Поиск элементов по предикату
     /// </summary>
     /// <param name="node">Текущий узел</param>
-    /// <param name="predicate">Предикат поиска</param>
+    /// <param name="item">Объект для поиска</param>
     /// <returns>Найденные элементы</returns>
-    private IEnumerable<T> FindElements(IsdNode<T> node, Predicate<T> predicate)
+    private IEnumerable<T> FindElements(IsdNode<T> node, T item)
     {
         if (node == null) yield break;
         
         //проверяем текущий элемент, если подходит, возвращаем
-        if (predicate(node.Value))
+        if (node.Value.Equals(item))
         {
             yield return node.Value; //используем функцию генератор,
                                      //так как нам нужна возможность возвращать множество значений из метода
@@ -134,7 +146,7 @@ public class IsdTree<T> where T : class, ICloneable
         //идем по левому поддереву
         if (node.Left != null)
         {
-            foreach (var val in FindElements(node.Left, predicate))
+            foreach (var val in FindElements(node.Left, item))
             {
                 yield return val;
             }
@@ -143,7 +155,38 @@ public class IsdTree<T> where T : class, ICloneable
         //идем по правому поддереву.
         if (node.Right != null)
         {
-            foreach (var val in FindElements(node.Right, predicate))
+            foreach (var val in FindElements(node.Right, item))
+            {
+                yield return val;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Получить все элементы дерева
+    /// </summary>
+    /// <param name="node">Текущая нода</param>
+    /// <returns>Все элементы дерева</returns>
+    private IEnumerable<T> GetAll(IsdNode<T> node)
+    {
+        if (node == null) yield break;
+        
+        yield return node.Value; //используем функцию генератор,
+        //так как нам нужна возможность возвращать множество значений из метода
+
+        //идем по левому поддереву
+        if (node.Left != null)
+        {
+            foreach (var val in GetAll(node.Left))
+            {
+                yield return val;
+            }
+        }
+        
+        //идем по правому поддереву.
+        if (node.Right != null)
+        {
+            foreach (var val in GetAll(node.Right))
             {
                 yield return val;
             }

@@ -68,9 +68,9 @@ namespace l10
             IsVRControllerRequired = isVRContrRequired == 1;
         }
 
-        public override bool Equals(object? obj)
+        protected override bool EqualsVirtual(object? obj)
         {
-            bool parentEqual = base.Equals(obj);
+            bool parentEqual = base.EqualsVirtual(obj);
             return parentEqual
                 && (obj is VRGame vR)
                 && IsVRControllerRequired == vR.IsVRControllerRequired
