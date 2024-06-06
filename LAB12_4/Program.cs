@@ -21,7 +21,7 @@ public static class Program
             {
                 case 1:
                     avlTree = new AvlTreeNet<Game>();
-                    Console.WriteLine("Путое дерево успешно создано");
+                    Console.WriteLine("Пустое дерево успешно создано");
                     break;
                 case 2:
                     uint size = Helpers.Helpers.EnterUInt("размер дерева", 0, 65536);
@@ -78,12 +78,17 @@ public static class Program
                         break;
                     }
 
-                    var games = new Game[avlTree.Count];
-                    avlTree.CopyTo(games, 0);
+                    uint elementsCount = Helpers.Helpers.EnterUInt("длину массива", (uint)avlTree.Count, int.MaxValue);
+                    int startIndex = (int)Helpers.Helpers.EnterUInt("индекс массива для начала вставки", 0,
+                        (uint) (elementsCount - avlTree.Count));
+                    
+                    var games = new Game[elementsCount];
+                    avlTree.CopyTo(games, startIndex);
                     for (int j = 0; j < games.Length; j++)
                     {
                         Console.WriteLine($"Элемент #{j + 1}");
-                        games[j].ShowVirtual();
+                        if (games[j] == null) Console.WriteLine("Пусто");
+                        else games[j].ShowVirtual();
                     }
                     
                     break;
